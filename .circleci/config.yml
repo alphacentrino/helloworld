@@ -3,14 +3,15 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk
+    working_directory: ~/sample-springboot-api
     steps:
       - checkout
       - setup_remote_docker
-      - run: mvn clean install
+          docker_layer_caching: true
+      
       - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-      - run: docker build -t company/app:$CIRCLE_BRANCH .
-      - run: docker push rdocker11/app:$CIRCLE_BRANCH
+      - run: mvn clean deploy
       
         
       #- maven/test # checkout, build, test, and upload test results
