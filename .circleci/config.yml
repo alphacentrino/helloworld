@@ -11,7 +11,7 @@ jobs:
       
       - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-      - run: mvn clean deploy -Dimage=rdocker11/hellowspringboot-api:$CIRCLE_BUILD_NUM
+      - run: mvn clean compile jib:build -Dimage=rdocker11/hellowspringboot-api:$CIRCLE_BUILD_NUM
       
         
       #- maven/test # checkout, build, test, and upload test results
