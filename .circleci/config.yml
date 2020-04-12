@@ -1,13 +1,10 @@
 version: 2.1
-
-orbs:
-  maven: circleci/maven@0.0.12
-
-workflows:
-  maven_test:
-    jobs:
-      build:
-        steps:
-          - run: mvn clean package
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk-alpine
+    steps:
+      - checkout
+      - run: java -jar /app.jar
         
       #- maven/test # checkout, build, test, and upload test results
