@@ -45,7 +45,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+<!--
 	<build>
 		<finalName>hello-world-rest-api</finalName>
 		<plugins>
@@ -78,7 +78,7 @@
 		</plugins>
 
 	</build>
-
+ -->
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
