@@ -10,7 +10,7 @@ jobs:
       - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
       - run: docker build -t company/app:$CIRCLE_BRANCH .
-      - run: docker push rdocker11/hello-worldapp:0.0.1
+      - run: docker push rdocker11/app:$CIRCLE_BRANCH
       
         
       #- maven/test # checkout, build, test, and upload test results
