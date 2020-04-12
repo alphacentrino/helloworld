@@ -45,10 +45,19 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-<!--
+
 	<build>
+		
+		
 		<finalName>hello-world-rest-api</finalName>
 		<plugins>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+                		<artifactId>jib-maven-plugin</artifactId>
+                		<version>0.9.10</version>
+			</plugin>
+			
+			<!--
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -76,9 +85,9 @@
 			</plugin>
 
 		</plugins>
-
-	</build>
 -->
+	</build>
+
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
